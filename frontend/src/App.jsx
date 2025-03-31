@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import { Routes, Route, Navigate } from "react-router-dom";
 import HomePage from "./pages/HomePage";
@@ -7,10 +7,9 @@ import SettingsPage from "./pages/SettingsPage";
 import ProfilePage from "./pages/ProfilePage";
 import LoginPage from "./pages/LoginPage";
 import { useAuthStore } from "./store/useAuthStore";
-
+import { Toaster } from "react-hot-toast";
 
 function App() {
-
   const { authUser, checkAuth, isCheckingAuth } = useAuthStore();
   useEffect(() => {
     checkAuth();
@@ -18,7 +17,7 @@ function App() {
 
   console.log({ authUser });
 
-  if(isCheckingAuth && !authUser)
+  if (isCheckingAuth && !authUser)
     return (
       <div className="flex items-center justify-center h-screen">
         <div>
@@ -51,6 +50,7 @@ function App() {
           element={authUser ? <ProfilePage /> : <Navigate to="/login" />}
         />
       </Routes>
+      <Toaster />
     </div>
   );
 }
