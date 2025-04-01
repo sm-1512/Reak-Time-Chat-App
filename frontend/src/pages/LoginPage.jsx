@@ -116,7 +116,7 @@ const LoginPage = () => {
         </div>
       </div>
 
-      {/* Right Side - Image/Pattern */}
+      {/* Right Side-Image/Pattern */}
       <AuthImagePattern
         title={"Welcome back!"}
         subtitle={
