@@ -96,7 +96,7 @@ const LoginPage = () => {
             >
               {isLoggingIn ? (
                 <>
-                  <Loader2 className="h-5 w-5 animate-spin" />
+                  <span className="loading loading-dots loading-md"></span>
                   Loading...
                 </>
               ) : (
